@@ -1,4 +1,8 @@
 package com.mattoffe.Eccomerce.repositories;
 
-public interface PersonRepository {
+import com.mattoffe.Eccomerce.model.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PersonRepository extends JpaRepository<Person, Long> {
+    Person findByEmail(String email);
 }
